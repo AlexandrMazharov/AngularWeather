@@ -1,0 +1,29 @@
+.main {
+  text-align: center;
+  max-width: 600px;
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-wrapper{
+  padding-left: 20px;
+  padding-right: 20px;
+  font:white;
+
+}
+.main__autherDay{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  // position: absolute;
+  // top:0px;
+  // left:0px;
+  // right: 0px;
+  // bottom: 0px;
+  
+}
+.custom-nav{
+  padding-left: 40px;
+  padding-right: 40px;
+}

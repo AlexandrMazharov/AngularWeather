@@ -1,0 +1,61 @@
+<div *ngIf="_isLoad; else unset">
+  <div class="currentday-card s12 m12 l6 xl6">
+    <div class="horizontal current-card s12 m12 l6 xl6">
+      <div class="card-image">
+        <div class="current-card__tempDay">{{ _tempDay }}{{ _metricIcon }}</div>
+
+        <div>{{ _description }}</div>
+        <img src="{{ _iconUrl }}" alt="weatherIcon" />
+      </div>
+      <div class="card-stacked" style="max-width: 50%;">
+        <div class="card-content current-card__text">
+          <div>
+            <div class="current-card__maintext">
+              <p class="col">Ощущается</p>
+              <p class="col">{{ _feelsLike }}{{ _metricIcon }}</p>
+            </div>
+
+            <div class="current-card__maintext">
+              <p class="col">Влажность</p>
+              <p class="col">{{ _current?.humidity }} %</p>
+            </div>
+
+            <div class="current-card__maintext">
+              <p class="col">Облачность</p>
+              <p class="col">{{ _current?.clouds }} %</p>
+            </div>
+
+            <div class="current-card__maintext">
+              <p class="col">Ветер</p>
+              <p class="col">{{ _current?.wind_speed }} м/с</p>
+            </div>
+
+            <div class="current-card__maintext">
+              <p class="col">Ветер</p>
+              <p class="col">{{ _current?.wind_deg }} </p>
+            </div>            
+          </div>
+        </div>
+        <div class="card-action">
+          <p>{{ _currentTime }} {{ _dt }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #unset>
+  <div class="preloader-wrapper small active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>

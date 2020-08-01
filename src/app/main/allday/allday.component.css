@@ -1,0 +1,13 @@
+.item-card {
+  max-width: 300px;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+
+.item-card__header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 20px;
+}
+/*# sourceMappingURL=allday.component.css.map */

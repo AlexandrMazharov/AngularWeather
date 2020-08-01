@@ -1,0 +1,72 @@
+<!-- <div *ngIf="weather?.current; else unset"> -->
+
+  <nav>
+    <div class="nav-wrapper">
+      <span class=" left main__location brand-logo">{{ weather?.timezone }}</span>
+      <ul class="right">
+        <!-- < class="right hide-on-med-and-down"> -->
+        <li>
+          <div class="switch">
+            <label>
+              °F
+              <input
+                (change)="FieldsChange($event)"
+                value="angular"
+                type="checkbox"
+              />
+              <span class="lever"></span>
+              °C
+            </label>
+          </div>
+        </li>
+        <li><a href="badges.html">Components</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<!-- <div class="navbar">
+  <nav class="custom-nav">
+    <div class="nav-wrapper">
+      <div class="container">
+        
+        <ul class="right hide-on-med-and-down">
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div> -->
+<div class="main">
+  <app-currentday
+    *ngIf="weather?.current; else unset"
+    class="main__current-weather"
+    [current]="weather?.current"
+    [isMetric]="isMetric"
+  ></app-currentday>
+</div>
+<ng-template #unset>
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ul class="main__autherDay">
+  <app-allday
+    *ngFor="let item of weather?.daily"
+    [current]="item"
+    [isMetric]="isMetric"
+  >
+  </app-allday>
+</ul>
+<!-- </div> -->
