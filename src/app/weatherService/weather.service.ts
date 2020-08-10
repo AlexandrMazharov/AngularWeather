@@ -7,7 +7,7 @@ export class WeatherService {
   private APIKEY = '43fe13401509e1494a1a80c88243e12d';
   // unitDefault = 'metric';
 
-  getWeather(latt, lngg, isMetric) {
+  getWeather(latt, lngg, isMetric,lng) {
     let unit='';
     if (isMetric) {
       unit = 'metric';
@@ -15,9 +15,9 @@ export class WeatherService {
       unit = ''
     }
     // console.log
-    let MYAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${latt}&lon=${lngg}&exclude={part}&appid=${this.APIKEY}&lang=ru&units=${unit}`;
+    let MYAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${latt}&lon=${lngg}&exclude={part}&appid=${this.APIKEY}&lang=${lng}&units=${unit}`;
 
-    console.log(MYAPI);
+    // console.log(MYAPI);
     return this._http.get(MYAPI);
   }
 

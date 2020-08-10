@@ -1,46 +1,49 @@
 <!-- <div *ngIf="weather?.current; else unset"> -->
 
-  <nav>
-    <div class="nav-wrapper">
-      <span class=" left main__location brand-logo">{{ weather?.timezone }}</span>
-      <ul class="right">
-        <!-- < class="right hide-on-med-and-down"> -->
-        <li>
-          <div class="switch">
-            <label>
-              °F
-              <input
-                (change)="FieldsChange($event)"
-                value="angular"
-                type="checkbox"
-              />
-              <span class="lever"></span>
-              °C
-            </label>
-          </div>
-        </li>
-        <li><a href="badges.html">Components</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper">
+    <span class="left main__location brand-logo">{{ weather?.timezone }}</span>
+    <ul class="right menu">
+      <li>
+        <div class="naw__lang">
+          <!-- <label for=""> -->
+          <select
+            #langselect
+            (change)="
+              translate.use(langselect.value); changeLanguage(langselect.value)
+            "
+          >
+            <option *ngFor="let lang of translate.getLangs()" [value]="lang">
+              {{ lang }}</option
+            >
+          </select>
+          <!-- </label> -->
+        </div>
+      </li>
+      <li>
+        <div class="switch">
+          <label style="color: white;">
+            °F
+            <input
+              (change)="FieldsChange($event)"
+              value="angular"
+              type="checkbox"
+            />
+            <span class="lever"></span>
+            °C
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-
-<!-- <div class="navbar">
-  <nav class="custom-nav">
-    <div class="nav-wrapper">
-      <div class="container">
-        
-        <ul class="right hide-on-med-and-down">
-          <li></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</div> -->
 <div class="main">
   <app-currentday
+    
     *ngIf="weather?.current; else unset"
     class="main__current-weather"
+    [currentLng]="currentLng"
     [current]="weather?.current"
     [isMetric]="isMetric"
   ></app-currentday>
@@ -64,6 +67,7 @@
 <ul class="main__autherDay">
   <app-allday
     *ngFor="let item of weather?.daily"
+    [currentLng]="currentLng"
     [current]="item"
     [isMetric]="isMetric"
   >

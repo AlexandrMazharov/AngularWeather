@@ -68,7 +68,19 @@
                   "maximumError": "10kb"
                 }
               ]
-            }
+            },
+            "ru":{
+              "aot": true,
+              "outputPath": "/project/under-c-ru",
+              "i18nFile": "/project/locale/messages.ru.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ru",
+              "i18nMissingTranslation": "error"
+
+            },
+            "en": {}
+
+
           }
         },
         "serve": {

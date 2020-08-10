@@ -1,29 +1,46 @@
 .main {
   text-align: center;
-  max-width: 600px;
-  margin: 0px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
-.nav-wrapper{
+li > div > select {
+  display: block;
+  background-color: #ee6e73;
+  border: none;
+  outline: none;
+}
+.menu {
+  display: flex;
+  align-items: center;
+}
+.naw__lang {
+  display: flex;
+  align-items: center;
+  margin-top: -5px;
+  margin-right: 20px;
+}
+// div.langselect > label > select {
+//   display: block;
+// }
+.nav-wrapper {
   padding-left: 20px;
   padding-right: 20px;
-  font:white;
-
+  font: white;
 }
-.main__autherDay{
-  width: 100%;
+.main__autherDay {
+  box-sizing: border-box;
+  width: 90%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
-  // position: absolute;
-  // top:0px;
-  // left:0px;
-  // right: 0px;
+  margin: 0px auto;
+
   // bottom: 0px;
-  
 }
-.custom-nav{
+.custom-nav {
   padding-left: 40px;
   padding-right: 40px;
 }

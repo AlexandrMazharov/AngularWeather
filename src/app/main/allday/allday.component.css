@@ -4,6 +4,15 @@
           transform: rotate(5deg);
 }
 
+.card-image > img {
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
+}
+
+.card-stacked {
+  margin: -1rem;
+}
+
 .item-card__header {
   margin-left: auto;
   margin-right: auto;

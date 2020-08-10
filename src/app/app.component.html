@@ -1,1 +1,8 @@
-<app-main [weather]="weather" [isMetric]="isMetric" (onChanged)="onChanged($event)"> </app-main>
+<app-main
+  [weather]="weather"
+  [isMetric]="isMetric"
+  (onChanged)="onChanged($event)"
+  [inputCurrentLng]="currentLng"
+  (onChangedLanguage)="onChangedLanguage($event)"
+>
+</app-main>

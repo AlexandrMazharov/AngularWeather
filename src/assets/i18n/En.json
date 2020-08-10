@@ -1,0 +1,20 @@
+{
+  "HOME": {
+    "TITLE": "Helloy angular ",
+    "FELT": "Felt",
+    "HUMIDITY": "Humidity",
+    "CLOUDINES": "Cloudiness",
+    "WIND": "  Wind",
+    "InTheDaytime": "In the daytime",
+    "AtNight": "At night",
+    "WindDirection": "Wind direction",
+    "WindDirection1": "N",
+    "WindDirection2": "N-E",
+    "WindDirection3": "E",
+    "WindDirection4": "S-E",
+    "WindDirection5": "S",
+    "WindDirection6": "S-W",
+    "WindDirection7": "W",
+    "WindDirection8": "N-W"
+  }
+}

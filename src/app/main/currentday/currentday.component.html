@@ -1,43 +1,44 @@
 <div *ngIf="_isLoad; else unset">
-  <div class="currentday-card s12 m12 l6 xl6">
-    <div class="horizontal current-card s12 m12 l6 xl6">
-      <div class="card-image">
+  <div class="currentday-card">
+    <div class="horizontal current-card">
+      <div class="main">
         <div class="current-card__tempDay">{{ _tempDay }}{{ _metricIcon }}</div>
-
+        <!-- {{ 'HOME.TITLE' | translate }} -->
         <div>{{ _description }}</div>
-        <img src="{{ _iconUrl }}" alt="weatherIcon" />
+        <img class="card-image" src="{{ _iconUrl }}" alt="weatherIcon" />
       </div>
-      <div class="card-stacked" style="max-width: 50%;">
+      <div class="card-stacked mydescription">
         <div class="card-content current-card__text">
           <div>
             <div class="current-card__maintext">
-              <p class="col">Ощущается</p>
-              <p class="col">{{ _feelsLike }}{{ _metricIcon }}</p>
+              <span i18n class="">{{ "HOME.FELT" | translate }}</span>
+              <span class="">{{ _feelsLike }}{{ _metricIcon }}</span>
             </div>
 
             <div class="current-card__maintext">
-              <p class="col">Влажность</p>
-              <p class="col">{{ _current?.humidity }} %</p>
+              <span i18n class="">{{ "HOME.HUMIDITY" | translate }}</span>
+              <span class="">{{ _current?.humidity }} %</span>
             </div>
 
             <div class="current-card__maintext">
-              <p class="col">Облачность</p>
-              <p class="col">{{ _current?.clouds }} %</p>
+              <span i18n class="">{{ "HOME.CLOUDINES" | translate }}</span>
+              <span class="">{{ _current?.clouds }} %</span>
             </div>
 
             <div class="current-card__maintext">
-              <p class="col">Ветер</p>
-              <p class="col">{{ _current?.wind_speed }} м/с</p>
+              <span i18n class="">{{ "HOME.WIND" | translate }}</span>
+              <span class="">{{ _current?.wind_speed }} м/с</span>
             </div>
 
             <div class="current-card__maintext">
-              <p class="col">Ветер</p>
-              <p class="col">{{ _current?.wind_deg }} </p>
-            </div>            
+              <span i18n class="">{{ "HOME.WindDirection" | translate }}</span>
+              <!-- <span class="">{{ _current?.wind_deg }}</span> -->
+              <span i18n class="">{{ _windDirection }}</span>
+            </div>
           </div>
         </div>
         <div class="card-action">
-          <p>{{ _currentTime }} {{ _dt }}</p>
+          <span>{{ _currentTime }} {{ _dt }}</span>
         </div>
       </div>
     </div>
