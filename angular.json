@@ -27,12 +27,12 @@
             "styles": [
               {
                 "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
-                
               },
 
               "src/styles.scss",
-              "node_modules/@mdi/font/css/materialdesignicons.min.css", // Add
- 
+
+              "node_modules/@mdi/font/css/materialdesignicons.min.css",
+
               "node_modules/materialize-css/dist/css/materialize.min.css"
             ],
             "scripts": [
@@ -69,18 +69,15 @@
                 }
               ]
             },
-            "ru":{
+            "ru": {
               "aot": true,
               "outputPath": "/project/under-c-ru",
               "i18nFile": "/project/locale/messages.ru.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "ru",
               "i18nMissingTranslation": "error"
-
             },
             "en": {}
-
-
           }
         },
         "serve": {

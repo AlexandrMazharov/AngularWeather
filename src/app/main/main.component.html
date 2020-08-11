@@ -2,7 +2,9 @@
 
 <nav>
   <div class="nav-wrapper">
-    <span class="left main__location brand-logo">{{ weather?.timezone }}</span>
+    <!-- <span class="left main__location brand-logo">{{ weather?.timezone .substring(weather?.timezone .search(0, weather?.timezone .search('/')); }}</span> -->
+    <span class="left main__location brand-logo">{{ _place }}</span>
+
     <ul class="right menu">
       <li>
         <div class="naw__lang">
@@ -40,11 +42,10 @@
 
 <div class="main">
   <app-currentday
-    
-    *ngIf="weather?.current; else unset"
+    *ngIf="_weather?.current; else unset"
     class="main__current-weather"
     [currentLng]="currentLng"
-    [current]="weather?.current"
+    [current]="_weather.current"
     [isMetric]="isMetric"
   ></app-currentday>
 </div>
@@ -66,7 +67,7 @@
 
 <ul class="main__autherDay">
   <app-allday
-    *ngFor="let item of weather?.daily"
+    *ngFor="let item of _weather?.daily"
     [currentLng]="currentLng"
     [current]="item"
     [isMetric]="isMetric"

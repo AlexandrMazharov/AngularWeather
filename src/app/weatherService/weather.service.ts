@@ -17,7 +17,7 @@ export class WeatherService {
     // console.log
     let MYAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${latt}&lon=${lngg}&exclude={part}&appid=${this.APIKEY}&lang=${lng}&units=${unit}`;
 
-    // console.log(MYAPI);
+    console.log(MYAPI);
     return this._http.get(MYAPI);
   }
 

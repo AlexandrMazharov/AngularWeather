@@ -39,6 +39,8 @@ export class AppComponent {
   }
 
   success(pos) {
+    console.log(pos);
+
     this.crd = pos.coords;
 
     this.weather = this.dataService
