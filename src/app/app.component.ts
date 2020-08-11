@@ -10,11 +10,19 @@ import { async } from 'rxjs/internal/scheduler/async';
 })
 @Injectable()
 export class AppComponent {
+  public weather;
   public crd;
+  public coords: string[];
+  public isMetric;
+  public currentLng = 'en';
+  private _http: HttpClient;
   private dataService;
 
-  isMetric;
-  currentLng = 'en';
+  options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
 
   onChanged(increased: any) {
     this.isMetric = !this.isMetric;
@@ -25,24 +33,13 @@ export class AppComponent {
     this.ngOnInit();
   }
 
-  public weather;
-  options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0,
-  };
-
-  private _http: HttpClient;
-  coords: string[];
   constructor(_dataService: WeatherService) {
     this.dataService = _dataService;
   }
 
   success(pos) {
-    console.log(pos);
-
+    // console.log(pos);
     this.crd = pos.coords;
-
     this.weather = this.dataService
       .getWeather(
         this.crd.latitude,

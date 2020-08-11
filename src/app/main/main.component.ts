@@ -18,19 +18,27 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class MainComponent implements OnInit {
   currentMetric: FormControl;
-  @Input() isMetric;
   _place: string;
   _weather;
+
+  @Input() isMetric;
+
   @Input()
   set weather(weather: any) {
     this._weather = weather;
     this._place = weather?.timezone;
 
     // this._place.search('/');
-    this._place = this._place.substring(this._place.search('/')+1,this._place.length);
-    
+    this._place = this._place.substring(
+      this._place.search('/') + 1,
+      this._place.length
+    );
   }
-  
+
+  @Input()
+  set inputCurrentLng(currentLng) {
+    this.currentLng = currentLng;
+  }
 
   @Output() onChanged = new EventEmitter<boolean>();
   @Output() onChangedLanguage = new EventEmitter<String>();
@@ -43,12 +51,6 @@ export class MainComponent implements OnInit {
 
   FieldsChange(increased: any) {
     this.onChanged.emit(increased);
-  }
-  // @Input() weather;
-
-  @Input()
-  set inputCurrentLng(currentLng) {
-    this.currentLng = currentLng;
   }
 
   constructor(public translate: TranslateService) {

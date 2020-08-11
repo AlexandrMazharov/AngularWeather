@@ -22,13 +22,11 @@ export class CurrentdayComponent implements OnInit {
   _isNum = true;
   _currentLng;
   _windDirection;
+  private translateService: TranslateService;
+
   @Input()
   set isMetric(isMetric: any) {
     isMetric === true ? (this._metricIcon = '℃') : (this._metricIcon = '°F');
-  }
-
-  onChanged(increased: any) {
-    this.ngOnInit();
   }
 
   @Input()
@@ -37,9 +35,11 @@ export class CurrentdayComponent implements OnInit {
 
     this._iconUrl = `http://openweathermap.org/img/wn/${this._current?.weather[0].icon}@4x.png`;
 
-    this._dt = this.upperFirstChar(new Date(current?.dt * 1000).toLocaleString(this._currentLng, {
-      weekday: 'long',
-    }));
+    this._dt = this.upperFirstChar(
+      new Date(current?.dt * 1000).toLocaleString(this._currentLng, {
+        weekday: 'long',
+      })
+    );
 
     this._currentTime = new Date(current?.dt * 1000).toLocaleTimeString(
       this._currentLng,
@@ -54,8 +54,8 @@ export class CurrentdayComponent implements OnInit {
       this._description = this.upperFirstChar(
         this._current?.weather[0].description
       );
-    }    
-    switch (true) { 
+    }
+    switch (true) {
       case this._current.wind_deg <= 22.5: {
         this._windDirection = this.translateService.instant(
           'HOME.WindDirection1'
@@ -116,16 +116,16 @@ export class CurrentdayComponent implements OnInit {
         );
         break;
       }
-    }
-    // console.log(this._windDirection);
-
+    }    
     this._isLoad = true;
   }
-
+  onChanged(increased: any) {
+    this.ngOnInit();
+  }
   public upperFirstChar(str: any) {
     return str.charAt(0).toUpperCase() + str.substr(1);
   }
-  private translateService: TranslateService;
+
   constructor(main: MainComponent, translateService: TranslateService) {
     this.translateService = translateService;
     this._currentLng = main.currentLng;
