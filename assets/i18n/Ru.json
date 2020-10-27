@@ -1,0 +1,20 @@
+{
+  "HOME": {
+    "TITLE": "Helloy angular ",
+    "FELT": "Ощущается",
+    "HUMIDITY": "Влажность",
+    "CLOUDINES": "Облачность",
+    "WIND": "  Скорость ветра",
+    "InTheDaytime": "Днем",
+    "AtNight": "Ночью",
+    "WindDirection": "Направление ветра",
+    "WindDirection1": "C",
+    "WindDirection2": "С-В",
+    "WindDirection3": "В",
+    "WindDirection4": "Ю-В",
+    "WindDirection5": "Ю",
+    "WindDirection6": "Ю-З",
+    "WindDirection7": "З",
+    "WindDirection8": "С-З"
+  }
+}
